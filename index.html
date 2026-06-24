@@ -164,24 +164,3 @@
   <script src="js/Script.js" defer></script>
 </body>
 </html>
-<input id="nombre" placeholder="Nombre">
-<input id="correo" placeholder="Correo">
-<textarea id="comentarios"></textarea>
-
-<button onclick="enviarPrincipal()">Enviar</button>
-
-<script>
-function enviarPrincipal() {
-  fetch("TU_URL_APPS_SCRIPT", {
-    method: "POST",
-    body: JSON.stringify({
-      tipo: "principal",
-      nombre: document.getElementById("nombre").value,
-      correo: document.getElementById("correo").value,
-      comentarios: document.getElementById("comentarios").value
-    })
-  })
-  .then(r => r.text())
-  .then(() => alert("Guardado principal"));
-}
-</script>
